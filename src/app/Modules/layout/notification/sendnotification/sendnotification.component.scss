@@ -1,0 +1,113 @@
+$color: #7198f3;
+$padding: 30px;
+$border: 3px solid #dcdcdc;
+
+section {
+    background-color: #ffff;
+    // height: calc(110vh - 100px);
+    border-left: 5px solid gainsboro;
+  
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px;
+      font-weight: 400;
+      font-size: 30px;
+      color: $color;
+      border-bottom: $border;
+  
+      .heading {
+        font-weight: 600;
+      font-size: 25px;
+      }
+      .profileIcon {
+        display: flex;
+        .material-icons {
+          font-size: 40px;
+        }
+        .user {
+          display: flex;
+          #name {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+section {
+    height: calc(110vh - 100px);
+    .detail {
+      padding:$padding;
+      .title {
+        color: $color;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .userType {
+        padding: 5px 30px;
+        color: $color;
+        .mat-radio-group {
+          display: flex;
+          gap: 100px;
+          width: 100%;
+          font-size: 20px;
+  
+          ::ng-deep {
+            .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+              border-color: rgb(66, 134, 244);
+            }
+  
+            .mat-radio-button.mat-accent .mat-radio-inner-circle {
+              color: rgb(66, 134, 244);
+              background-color: rgb(66, 134, 244);
+            }
+          }
+        }
+        .inputField {
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          label{
+            font-size: 20px;
+          }
+          ::ng-deep {
+            .mat-form-field-appearance-outline .mat-form-field-outline {
+              color: $color;
+            }
+          }
+          // ::ng-deep .mat-input-element .mat-form-field-autofill-control  .ng-invalid {
+          //   color: red;
+          // }
+          // ::ng-deep
+          //   .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+          //   .mat-form-field-outline-thick {
+          //   color: red !important;
+          //   opacity: 0.8 !important;
+          // }
+          .mat-form-field {
+            width: 700px;
+            .mat-hint,
+            input,
+            ::placeholder,
+            .mat-form-field-label {
+              color: $color;
+              font-size: 20px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      .btn{
+        display: flex;
+        margin:5% 0% 0% 15%;
+        #sendBtn{
+          width: 300px;
+          padding: 10px;
+          background-color:$color;
+          color: #fff;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  

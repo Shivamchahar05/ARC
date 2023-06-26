@@ -1,0 +1,68 @@
+<section>
+    <div class="header">
+        <p>Notification Management</p>
+        <div class="icons">
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="img">
+                <i class="fa-solid fa-user" (click)="profile()"></i>
+            </div>
+            <h3>User</h3>
+        </div>
+    </div>
+    <hr>
+    <!--  -->
+
+    <div class="main">
+        <div class="btn_first">
+            <button (click)="send_notifdication()">Send Notification</button>
+        </div>
+        <form [formGroup]="notificationForm">
+            <div class="main_under">
+                <div class="search_select">
+                    <div class="search">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Search through tittle, Discription</mat-label>
+                            <input matInput placeholder="" value="" formControlName="Search">
+                            <mat-error *ngIf=" formControls?.Search?.errors?.required"> *Search field required
+                            </mat-error>
+                            <mat-error *ngIf=" formControls?.Search?.errors?.pattern"> *space are not valid
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>show</mat-label>
+                            <select matNativeControl required formControlName="pageSize" placeholder="10">
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                            </select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <p>User</p>
+                <mat-form-field appearance="outline">
+                    <!-- <mat-label>Select Type</mat-label> -->
+                    <select matNativeControl required>
+                        <option value="select">Select</option>
+                        <option value="">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </mat-form-field>
+                <div class="btn">
+                    <button class="apply" (click)="append()">APPLY</button>
+                    <button class="reset" (click)="reset()">RESET</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <section class="table">
+        <app-table [columns]="heading" [dataSource]="datasource" (userDetail)="getUserData($event)"
+            [pageSize]="pageSize"></app-table>
+    </section>
+</section>

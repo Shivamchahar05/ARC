@@ -1,0 +1,91 @@
+<section>
+    <div class="header">
+        <p>Earning Management</p>
+        <div class="icons">
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="img">
+                <i class="fa-solid fa-user" (click)="profile()"></i>
+            </div>
+            <h3>User</h3>
+        </div>
+    </div>
+    <hr>
+    <!--  -->
+    <div class="main">
+        <div class="sec_main">
+            <p>Total Earning</p>
+            <p>$20,000</p>
+            <div>
+                <!-- <mat-form-field appearance="outline"> -->
+                <!-- class="sec_main"<mat-label>Select Type</mat-label> -->
+                <select name="cars" id="cars" class="select">
+                    <option value="Week">Week</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <!-- </mat-form-field> -->
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <form [formGroup]="earningForm">
+        <div class="third_main">
+            <div class="search_select">
+                <div class="search">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Search through Name, Client ID</mat-label>
+                        <input matInput placeholder="" value="" (keyup)="applyFilter($event)">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <!-- <mat-label>Select Type</mat-label> -->
+                        <select matNativeControl required>
+                            <option value="">Show 10</option>
+                            <option value="">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="sortby">
+                <div>
+                    <p>Sortby</p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Weekly</mat-label>
+                        <select matNativeControl required>
+                            <option value="select">Select</option>
+                            <option value="">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <p>Status</p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Status</mat-label>
+                        <select matNativeControl required>
+                            <option value="select">Select</option>
+                            <option value="">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="btn">
+                <button class="apply">APPLY</button>
+                <button class="reset">RESET</button>
+            </div>
+
+        </div>
+    </form>
+    <section class="table">
+        <app-table [columns]="heading" [dataSource]="datasource" (userDetail)="getUserData($event)"></app-table>
+    </section>
+</section>

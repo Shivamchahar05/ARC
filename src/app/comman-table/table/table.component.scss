@@ -1,0 +1,37 @@
+// table {
+//     width: 100%;
+//   }
+$primary: #5282f0;
+$backGroundColor: #c0d2fa;
+section {
+  table {
+    width: 100%;
+    border: 2px solid $primary;
+    th {
+      color: $primary;
+      background-color: #c0d2fa;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    tr {
+      text-align: center;
+    }
+    td {
+      color: $primary;
+      text-align: center;
+    }
+    mat-icon {
+      color: $primary;
+      margin-right: 4px;
+    }
+  }
+}
+// ::ng-deep {
+//   .mat-sort-header .mat-header-cell .cdk-header-cell .ng-tns-c162-4 .cdk-column-First-Name .mat-column-First-Name {
+//     width: 117px;
+//   }
+// }
+// body > app-root > app-root > app-layout > section > mat-sidenav-container > mat-sidenav-content > div > app-client > section > section > app-table > section > table > thead > tr > th.mat-sort-header.mat-header-cell.cdk-header-cell.ng-tns-c162-4.cdk-column-First-Name.mat-column-First-Name.ng-star-inserted{
+//   width: 117px;
+// }
+

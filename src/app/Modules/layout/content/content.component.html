@@ -1,0 +1,22 @@
+<section>
+    <div class="header">
+        <p>Content Management</p>
+        <div class="icons">
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="img">
+                <i class="fa-solid fa-user" (click)="profile()"></i>
+            </div>
+            <h3>User</h3>
+        </div>
+    </div>
+    <hr>
+    <!--  -->
+    <mat-tab-group class="tabs"> 
+        <mat-tab label="Who we are"> <app-who-we></app-who-we> </mat-tab>
+        <mat-tab label="Terms & conditions"> <app-terms></app-terms> </mat-tab>
+        <mat-tab label="FAQs"> <app-faqs></app-faqs> </mat-tab>
+        <mat-tab label="About us"> <app-about></app-about> </mat-tab>
+      </mat-tab-group>
+</section>

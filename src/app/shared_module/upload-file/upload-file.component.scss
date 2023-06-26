@@ -1,0 +1,43 @@
+.report{
+    display: flex;
+    // justify-content: space-between;
+    background-color:hsl(225deg 89% 96%) ;
+    height: 250px;
+    max-width: fit-content;
+    // width: 400px;
+    .pdf{
+        height: 150px;
+        width: 200px;
+        
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        margin-left: 20px;
+        position: relative;
+        border-bottom: 5px solid red;
+        .fa-xmark{
+            position: absolute;
+            // bottom:125px;
+            // left: 180px;
+            right: 0;
+            top: 0;
+            font-size: 18px;
+
+        }
+    }
+    .btn{
+        margin-top: 115px;
+        margin-right: 50px;
+        margin-left: 20px;
+        button{
+            width: 100px;
+            height: 30px;
+            background-color: #5282f0;
+            color: white;
+            font-size: 18px;
+            border: none;
+        }
+    }
+ }

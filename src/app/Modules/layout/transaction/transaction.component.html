@@ -1,0 +1,109 @@
+<body>
+  <header>
+    <h1>Transaction Management</h1>
+    <div class="profile">
+      <div class="icon">
+        <mat-icon class="notification">notifications</mat-icon>
+        <mat-icon>account_circle</mat-icon>
+      </div>
+      <h3>User</h3>
+    </div>
+  </header>
+  <section class="pay">
+    <div class="box">
+      <h1>Total Payment</h1>
+      <h1>$120000</h1>
+    </div>
+    <div class="box">
+      <h1>Current Month Payment</h1>
+      <h1>$1200</h1>
+    </div>
+  </section>
+  <form [formGroup]="transactionForm">
+    <section class="filter">
+      <div class="row">
+        <div class="search">
+          <mat-form-field appearance="outline">
+            <mat-label>Search through transaction ID</mat-label>
+            <input matInput placeholder="Search by first name" formControlName="Search" required  (keyup)="applyFilter($event)" />
+            <mat-error *ngIf=" formControls?.Search?.errors?.required"> *Search field required
+            </mat-error>
+            <mat-error *ngIf=" formControls?.Search?.errors?.pattern"> *space are not valid
+            </mat-error>
+            <mat-icon matPrefix>search</mat-icon>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" class="select">
+            <mat-label>Select</mat-label>
+            <mat-select>
+              <mat-option value="one">Show 10</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="sec_row">
+        <div class="first_select">
+          <div class="add">
+            <p>Added on</p>
+            <div class="out_select">
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>From</mat-label>
+                  <input matInput type="date" placeholder="from" />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>To</mat-label>
+                  <input matInput type="date" placeholder="To" />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>Amount Range</p>
+            <div class="out_select">
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>From</mat-label>
+                  <input matInput type="date" placeholder="from" />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>To</mat-label>
+                  <input matInput type="date" placeholder="To" />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>Status</p>
+            <mat-form-field appearance="outline">
+              <mat-label>Select</mat-label>
+              <mat-select>
+                <mat-option value="one">Show 10</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <div class="file_icon">
+            <mat-icon class="mat-18">drive_file_move_fill</mat-icon>
+          </div>
+        </div>
+      </div>
+      <div class="btn">
+        <button mat-raised-button class="apply" (click)="append()">APPLY</button>
+        <button mat-raised-button class="reset" (click)="reset()">RESET</button>
+      </div>
+    </section>
+  </form>
+  <section class="table">
+    <app-table [columns]="heading" [dataSource]="datasource" (userDetail)="getUserData($event)"></app-table>
+  </section>
+</body>

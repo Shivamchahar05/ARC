@@ -1,0 +1,93 @@
+section{
+    .header{
+        display: grid;
+        grid-template-columns: 90% 10%;
+        margin-top: 20px;
+        margin-left: 20px;
+        .Stuff{
+          font-size: 20px;
+          color: #759bf3;
+          font-weight: 600;
+          p{
+            font-size: 15px;
+            color: #759bf3;
+            margin-top: 10px;
+            font-weight: 400;
+          }
+        }
+        .icons{
+            display: flex;
+          //   justify-content: center;
+            color: #5282f0;
+            .notification{
+                i{
+                    font-size: 30px;
+                }
+            }
+            .img{
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                border: 1px solid #759bf3;
+                margin-left: 20px;
+                i{
+                    font-size: 15px;
+                    padding-top: 5px;
+                    padding-left: 9px;
+                }
+            }
+            h3{
+              margin-left: 20px;
+              font-size: 20px;               
+          }
+  
+        }
+  
+        
+      }
+
+      .main{
+          border: 1px solid #759bf3;
+          margin: 40px;
+          padding: 40px;
+          color:  #759bf3;
+          label{
+              font-size: 18px;
+              font-weight: 500;
+          }
+          .user{
+              display: flex;
+              justify-content: space-between;
+              .first_sec{
+                  border-right: 1px solid #759bf3;
+                  padding-right: 75px;
+              }
+          }
+      }
+      .btn{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 30px;
+          button{
+              height:40px ;
+              width: 100px;
+              background-color: #5282f0;
+              color: white;
+              font-size: 18px;
+              border: none;
+              border-radius: 3px;
+          }
+      }
+      ::ng-deep {
+        .mat-form-field-appearance-outline .mat-form-field-outline {
+           color: hsl(230deg 85% 71%);
+        }
+        .mat-form-field {
+            width: 600px;
+           .mat-hint, input, ::placeholder, .mat-form-field-label {
+              color: hsl(230deg 85% 71%);
+           }
+        }
+     }
+}

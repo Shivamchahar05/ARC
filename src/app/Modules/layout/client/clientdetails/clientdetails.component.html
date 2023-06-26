@@ -1,0 +1,358 @@
+<section>
+    <div class="header">
+        <div class="Stuff">Client Management
+            <p>Client Management> Details</p>
+        </div>
+        <div class="icons">
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="img">
+                <i class="fa-solid fa-user" (click)="profile()"></i>
+            </div>
+            <h3>User</h3>
+        </div>
+    </div>
+    <hr>
+    <!--  -->
+    <div class="main">
+        <div class="clientsection">
+            <p>Client Details</p>
+            <div class="btn">
+                <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                <button class="ban"><i class="fa-solid fa-ban"></i></button>
+            </div>
+        </div>
+        <!--  -->
+        <div class="details">
+            <div class="firstpart">
+                <div class="userpic">
+                    <button><i class="fa-solid fa-user"></i></button>
+                    <div class="ids">
+                        <div>
+                            <p>Client ID</p>
+                            <h2>Client1234</h2>
+                        </div>
+                        <div>
+                            <p>Email</p>
+                            <h2>Martinbrown@rocketbk.Column</h2>
+                        </div>
+                        <div>
+                            <p>Postal Code</p>
+                            <h2>024242</h2>
+                        </div>
+                        <div>
+                            <h2>Address</h2>
+                            <h2>120-B Block, New York</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="names">
+                    <div>
+                        <p>Full Name</p>
+                        <h2>Martin Brown</h2>
+                    </div>
+                    <div>
+                        <p>Mobile Number</p>
+                        <h2>+966-98765432</h2>
+                    </div>
+                    <div>
+                        <p>Status</p>
+                        <h2>Active</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="secondpart">
+                <div class="spdetails">
+                    <h1>
+                        Spouse Details
+                    </h1>
+                    <div class="names">
+                        <div>
+                            <p>Full Name</p>
+                            <h2>Olivia Brown</h2>
+                        </div>
+                        <div>
+                            <p>Email</p>
+                            <h2>Oliviabrown@rocketbk.com</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="number">
+                    <div>
+                        <p>Mobile Number</p>
+                        <h2>+966-98765432</h2>
+                    </div>
+                    <div>
+                        <p>Address</p>
+                        <h2>120-B Block , New York</h2>
+                    </div>
+                    <div>
+                        <p>Postal Code </p>
+                        <h2>024242</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="third_main">
+            <div>
+                <h1>Attended call #1?</h1>
+                <div class="check">
+                    <div>
+                        <input type="radio" id="html" name="fav_language" value="HTML">
+                         <label for="html">Yes</label>
+                         
+                    </div>
+                    <div>
+                        <input type="radio" id="css" name="fav_language" value="CSS">
+                          <label for="css">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="ssn">
+                <h1>SSN Number <i class="fa-solid fa-pencil"></i></h1>
+                <input type="text" class="text">
+                <button>Save</button>
+            </div>
+        </div>
+        <!--  -->
+        <div class="fourth_main">
+            <div>
+                <h1>Attended Credit Counseling Session?</h1>
+                <div class="check">
+                    <div>
+                        <input type="radio" id="html" name="fav_language" value="HTML">
+                         <label for="html">Yes</label>
+                         
+                    </div>
+                    <div class="no">
+                        <input type="radio" id="css" name="fav_language" value="CSS">
+                          <label for="css">No</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="fifth_main">
+            <div>
+                <h1>Credit Report Reviewed with Paralegal/Attorney?</h1>
+                <div class="check">
+                    <div>
+                        <input type="radio" id="html" name="fav_language" value="HTML">
+                          <label for="html">Yes</label>
+                         
+                    </div>
+                    <div class="no">
+                        <input type="radio" id="css" name="fav_language" value="CSS">
+                          <label for="css">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="ssn">
+                <h1>Case Status</h1>
+                <div class="check">
+                    <div>
+                        <input type="radio" id="html" name="fav_language" value="HTML">
+                          <label for="html">In-progress</label>
+                         
+                    </div>
+                    <div class="no">
+                        <input type="radio" id="css" name="fav_language" value="CSS">
+                          <label for="css">Not field</label>
+                    </div>
+                    <div class="no">
+                        <input type="radio" id="java" name="fav_language" value="java">
+                          <label for="java">Case Closed</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <app-upload-file></app-upload-file> -->
+        <!--  -->
+        <div class="sixth_main">
+            <h1>Credit Report</h1>
+            <app-upload-file></app-upload-file>
+            <!-- <div class="report">
+                <div class="pdf">
+                    <button mat-button (click)="imagesfile.click()" class="imagesadd">
+                        <input id="file" type="file" class="form-control" multiple="" #imagesfile
+                            (change)="onFileChange($event)" style="display: none;">
+                        <i class="fa-solid fa-book-open"></i>
+                    </button>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="btn">
+                    <button>Upload</button>
+                </div>
+            </div> -->
+        </div>
+        <!--  -->
+        <div class="fourth_main">
+            <div>
+                <h1>Payment Type</h1>
+                <div class="check">
+                    <div>
+                        <input type="radio" id="html" name="fav_language" value="HTML">
+                          <label for="html">Pre-filing</label>
+                         
+                    </div>
+                    <div class="no">
+                        <input type="radio" id="css" name="fav_language" value="CSS">
+                          <label for="css">Post-filing</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="seventh_main">
+            <div>
+                <h1>Paid Amount</h1>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-label>Favorite food</mat-label> -->
+                    <input matInput placeholder="$200">
+                </mat-form-field>
+            </div>
+            <div class="pending">
+                <h1>Pending Amount</h1>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-label>Favorite food</mat-label> -->
+                    <input matInput placeholder="$300">
+                </mat-form-field>
+            </div>
+            <div class="btn">
+                <button>Save</button>
+            </div>
+        </div>
+        <!--  -->
+        <div class="fourth_main">
+            <div>
+                <h1>Attended Call#2?</h1>
+                <div class="check">
+                    <div>
+                        <input type="radio" id="html" name="fav_language" value="HTML">
+                          <label for="html">Yes</label>
+                         
+                    </div>
+                    <div class="no">
+                        <input type="radio" id="css" name="fav_language" value="CSS">
+                          <label for="css">No</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="sixth_main">
+            <h1>BCI Files</h1>
+            <div class="report">
+                <app-upload-file></app-upload-file>
+                <!-- <div class="pdf"> -->
+    
+                    <!-- <button mat-button (click)="imagesfile.click()" class="imagesadd">
+                        <input id="file" type="file" class="form-control" multiple="" #imagesfile
+                            (change)="onFileChange($event)" style="display: none;">
+                        <i class="fa-solid fa-book-open"></i>
+                    </button> -->
+                    <!-- <i class="fa-solid fa-xmark"></i> -->
+                <!-- </div> -->
+                <!-- <div class="btn">
+                    <button>Upload</button>
+                </div> -->
+            </div>
+        </div>
+        <!--  -->
+        <div class="eight_main">
+            <h1>Upload resources for the Client</h1>
+            <div class="report">
+                <app-upload-file></app-upload-file>
+                <!-- <div>
+                    <div class="pdf">
+                        <button mat-button (click)="imagesfile.click()" class="imagesadd">
+                            <input id="file" type="file" class="form-control" multiple="" #imagesfile
+                                (change)="onFileChange($event)" style="display: none;">
+                            <i class="fa-solid fa-book-open"></i>
+                        </button>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <h2>Download</h2>
+                </div>
+                <div>
+                    <div class="pdf">
+                        <button mat-button (click)="imagesfile.click()" class="imagesadd">
+                            <input id="file" type="file" class="form-control" multiple="" #imagesfile
+                                (change)="onFileChange($event)" style="display: none;">
+                            <i class="fa-solid fa-book-open"></i>
+                        </button>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <h2>Download</h2>
+                </div>
+                <div>
+                    <div class="pdf">
+                        <button mat-button (click)="imagesfile.click()" class="imagesadd">
+                            <input id="file" type="file" class="form-control" multiple="" #imagesfile
+                                (change)="onFileChange($event)" style="display: none;">
+                            <i class="fa-solid fa-book-open"></i>
+                        </button>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <h2>Download</h2>
+                </div>
+                <div class="btn">
+                    <button>Upload</button> -->
+                <!-- </div> -->
+            </div>
+        </div>
+        <!-- -->
+        <div class="ninth_main">
+            <h1>Resources uploaded by the Client</h1>
+            <div class="report">
+                <app-upload-file></app-upload-file>
+                <!-- <div>
+                    <div class="pdf">
+                        <button mat-button (click)="imagesfile.click()" class="imagesadd">
+                            <input id="file" type="file" class="form-control" multiple="" #imagesfile
+                                (change)="onFileChange($event)" style="display: none;">
+                            <i class="fa-solid fa-book-open"></i>
+                        </button>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <h2>Download</h2>
+                </div>
+                <div>
+                    <div class="pdf">
+                        <button mat-button (click)="imagesfile.click()" class="imagesadd">
+                            <input id="file" type="file" class="form-control" multiple="" #imagesfile
+                                (change)="onFileChange($event)" style="display: none;">
+                            <i class="fa-solid fa-book-open"></i>
+                        </button>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <h2>Download</h2>
+                </div>
+                <div>
+                    <div class="pdf">
+                        <button mat-button (click)="imagesfile.click()" class="imagesadd">
+                            <input id="file" type="file" class="form-control" multiple="" #imagesfile
+                                (change)="onFileChange($event)" style="display: none;">
+                            <i class="fa-solid fa-book-open"></i>
+                        </button>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <h2>Download</h2>
+                </div> -->
+                <!-- <div class="btn">
+                    <button>Upload</button>
+                </div> -->
+            </div>
+        </div>
+        <div class="last_main">
+            <h1>
+                User Transaction
+            </h1>
+            <div class="table">
+                <app-table [columns]="heading" [dataSource]="datasource" (userDetail)="getUserData($event)"></app-table>
+            </div>
+        </div>
+    </div>
+</section>

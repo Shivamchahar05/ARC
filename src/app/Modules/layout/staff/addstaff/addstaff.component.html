@@ -1,0 +1,59 @@
+<section>
+    <div class="header">
+        <div class="Stuff">Staff Management
+            <p>Staff Management> Add Staff</p>
+        </div>
+        <div class="icons">
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="img">
+                <i class="fa-solid fa-user" (click)="profile()"></i>
+            </div>
+            <h3>User</h3>
+        </div>
+    </div>
+    <hr>
+
+    <!--  -->
+    <div class="main">
+        <form [formGroup]="addstaffform">
+            <div class="user">
+                <div class="first_sec">
+                    <label>*First Name</label><br>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>*First Name</mat-label>
+                        <input matInput placeholder="Martin" formControlName="first_name">
+                        <mat-error *ngIf=" formControls?.first_name?.errors?.required"> *Please enter the required field
+                        </mat-error>
+                        <mat-error *ngIf=" formControls?.first_name?.errors?.pattern"> *space are not valid
+                        </mat-error>
+                    </mat-form-field><br>
+                    <label>*Last Name</label><br>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>*Last Name</mat-label>
+                        <input matInput placeholder="Brown" formControlName="last_name">
+                        <mat-error *ngIf=" formControls?.last_name?.errors?.required"> *Please enter the required field
+                        </mat-error>
+                        <mat-error *ngIf=" formControls?.last_name?.errors?.pattern"> *space are not valid
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label>*Email Address</label><br>
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>*Email Address</mat-label>
+                        <input matInput placeholder="Brown" formControlName="email">
+                        <mat-error *ngIf=" formControls?.email?.errors?.required"> *Please enter the required field
+                        </mat-error>
+                        <mat-error *ngIf=" formControls?.email?.errors?.pattern"> *space are not valid
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="btn">
+                <button>Save</button>
+            </div>
+        </form>
+    </div>
+</section>

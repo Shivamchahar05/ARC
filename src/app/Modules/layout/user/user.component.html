@@ -1,0 +1,275 @@
+<body>
+    <div class="header">
+        <div class="Stuff">User Management
+            <p>User Management> Add User</p>
+        </div>
+        <div class="icons">
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="img">
+                <i class="fa-solid fa-user" (click)="profile()"></i>
+            </div>
+            <h3>User</h3>
+        </div>
+    </div>
+    <hr>
+    <section>
+      <div class="profile">
+        <img src="../../../assets/profile.png" />
+        <a type="button" mat-button (click)="fileInput1.click()">
+          Upload User Profile
+          <input #fileInput1 type="file" style="display: none" (change)="onFileChange($event)" />
+        </a>
+      </div>
+      <form [formGroup]="userDetailsForm">
+        <div class="form-sections">
+          <div class="left">
+            <label>*Full Name</label>
+            <mat-form-field appearance="outline">
+              <input matInput formControlName="full_name"  required>
+              <mat-error *ngIf="userDetailsForm?.controls?.full_name?.errors?.required">*Full name is required</mat-error>
+              <mat-error *ngIf="userDetailsForm?.controls?.full_name?.errors?.minlength">*Minimum 3 character is required</mat-error>
+              <mat-error *ngIf="userDetailsForm?.controls?.full_name?.errors?.pattern">*Please remove accessinve null character </mat-error>
+            </mat-form-field>
+            <label>Email Address</label>
+            <mat-form-field appearance="outline">
+              <input matInput formControlName="email"  required>
+              <mat-error *ngIf="userDetailsForm?.controls?.email?.errors?.required">*Email is required</mat-error>
+              <mat-error *ngIf="userDetailsForm?.controls?.email?.errors?.email">*Enter correct email</mat-error>
+              <mat-error *ngIf="userDetailsForm?.controls?.email?.errors?.pattern">*Enter valid email</mat-error>
+            </mat-form-field>
+            <label>*Phone Number</label>
+            <mat-form-field appearance="outline">
+              <input matInput formControlName="phone_number"  required>
+              <mat-error *ngIf="userDetailsForm?.controls?.phone_number?.errors?.required">*Phone number is required</mat-error>
+              <!-- <mat-error *ngIf="userDetailsForm?.controls?.phone_number?.errors?.pattern">*Enter valid phone number</mat-error> -->
+            </mat-form-field>
+          </div>
+          <div class="right">
+            <label>*Postal Code</label>
+            <mat-form-field appearance="outline">
+              <input matInput formControlName="postalcode"  required>
+              <mat-error *ngIf="userDetailsForm?.controls?.postalcode?.errors?.required">*Postal is required</mat-error>
+  
+            </mat-form-field>
+            <label>*Password</label>
+            <mat-form-field appearance="outline">
+              <input matInput [type]="showPassword ? 'text' : 'password'" formControlName="password"
+                 required>
+              <mat-icon matSuffix (click)="showPassword=!showPassword" > {{showPassword?'visibility_off':'visibility'}}</mat-icon>
+              <mat-error *ngIf="userDetailsForm?.controls?.password?.errors?.required">*Password is required</mat-error>
+              <mat-error *ngIf="userDetailsForm?.controls?.password?.errors?.pattern">*Enter minimum five characters, at least one letter, one number and one special character. </mat-error>
+            </mat-form-field>
+            <label>*Confirm Password</label>
+            <mat-form-field appearance="outline">
+              <input matInput [type]="showConfirmPassword ? 'text' : 'password'" formControlName="confirm_password"
+                 required>
+              <mat-icon matSuffix (click)="showConfirmPassword=!showConfirmPassword" > {{showConfirmPassword?'visibility_off':'visibility'}}</mat-icon>
+              <mat-error *ngIf="userDetailsForm?.controls?.confirm_password?.errors?.required">*Confirm Password is required</mat-error>
+              <mat-error *ngIf="userDetailsForm?.controls?.confirm_password?.errors?.pattern">*Enter minimum five characters, at least one letter, one number and one special character. </mat-error>
+              <mat-error *ngIf="userDetailsForm?.controls?.confirm_password?.errors?.confirmedValidator">*Password and Confirm Password must be match.</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="save-button">
+          <button type="submit" mat-raised-button color="primary">
+            <ng-container *ngIf="!spinner">Save</ng-container>
+            <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+          </button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <div class="interview">
+        <div class="radio-button">
+          <label>Attend interview</label>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Yes </mat-radio-button>
+            <mat-radio-button value="2">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="ssn-number">
+          <label>SSN Number</label>
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <input matInput required>
+              <!-- <mat-icon matSuffix (click)="togglePasswordVisibility()" > {{showPassword?'visibility_off':'visibility'}}</mat-icon>
+                  <mat-error *ngIf="loginForm?.controls?.password?.errors?.required">*Password is required</mat-error> -->
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="primary">
+              <ng-container *ngIf="!spinner">Save</ng-container>
+              <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="credit-counselling">
+        <div class="radio-button">
+          <label>Attend Credit Counselling Session</label>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Yes </mat-radio-button>
+            <mat-radio-button value="2">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div class="credit-file">
+        <div class="radio-button">
+          <label>Credit File Reviewed</label>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Yes </mat-radio-button>
+            <mat-radio-button value="2">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div class="credit-report">
+        <div class="radio-button">
+          <label>Credit Report</label>
+          <div class="doc-upload">
+            <a type="button" mat-button (click)="fileInput1.click()" *ngIf="true">
+              <img src="../../../../assets/upload.png" alt="Upload File">
+              <input #fileInput1 type="file" style="display: none" (change)="onFileChange($event)" />
+            </a>
+            <div class="uploaded" *ngIf="false">
+              <div class="uploaded-document">
+                <mat-icon>picture_as_pdf</mat-icon>
+                <p>report 01 .pdf</p>
+              </div>
+              <div class="upload-button">
+                <button type="submit" mat-raised-button color="primary">
+                  <ng-container *ngIf="!spinner">Upload</ng-container>
+                  <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="payment">
+        <div class="radio-button">
+           <label>Payment Type</label>
+           <mat-radio-group aria-label="Select an option">
+             <mat-radio-button value="1">Pre-Filling </mat-radio-button>
+             <mat-radio-button value="2">Post-Filling</mat-radio-button>
+           </mat-radio-group>
+        </div>
+          <div class="payment-inputs">
+              <div class="paid-amount">
+                <p>Paid Amount</p>
+                <mat-form-field appearance="outline">
+                  <input matInput  required>
+                  <!-- <mat-error *ngIf="loginForm?.controls?.email?.errors?.required">*Email is required</mat-error>
+                    <mat-error *ngIf="loginForm?.controls?.email?.errors?.email">*Enter correct email</mat-error> -->
+                </mat-form-field>
+              </div>
+              <div class="pending-amount">
+                <p>Pending Amount</p>
+                <mat-form-field appearance="outline">
+                  <input matInput   required>
+                  <!-- <mat-error *ngIf="loginForm?.controls?.email?.errors?.required">*Email is required</mat-error>
+                    <mat-error *ngIf="loginForm?.controls?.email?.errors?.email">*Enter correct email</mat-error> -->
+                </mat-form-field>
+              </div>
+          </div>
+  
+      </div>
+      <div class="interview-2">
+        <div class="radio-button">
+          <label>Attended Interview#2</label>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Yes </mat-radio-button>
+            <mat-radio-button value="2">No</mat-radio-button>
+          </mat-radio-group>
+          <label class="bci-file">BCI Files</label>
+          <div class="doc-upload">
+            <a type="button" mat-button (click)="fileInput1.click()" *ngIf="true">
+              <img src="../../../../assets/upload.png" alt="Upload File">
+              <input #fileInput1 type="file" style="display: none" (change)="onFileChange($event)" />
+            </a>
+            <div class="uploaded" *ngIf="false">
+              <div class="uploaded-document">
+                <div class="doc">
+                  <mat-icon>picture_as_pdf</mat-icon>
+                  <p>report 01 .pdf</p>
+                </div>
+                <!-- <button type="submit" mat-raised-button color="primary">
+                  <ng-container *ngIf="!spinner">download</ng-container>
+                  <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+                </button> -->
+              </div>
+  
+              <div class="upload-button">
+                <button type="submit" mat-raised-button color="primary">
+                  <ng-container *ngIf="!spinner">Upload</ng-container>
+                  <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="download-resources">
+        <div class="doc-section">
+          <label>Download Resources </label>
+          <div class="doc-upload">
+            <a
+              type="button"
+              mat-button
+              (click)="fileInput1.click()"
+              *ngIf="true"
+            >
+              <img src="../../../../assets/upload.png" alt="Upload File" />
+              <input
+                #fileInput1
+                type="file"
+                style="display: none"
+                (change)="onFileChange($event)"
+              />
+            </a>
+            <div class="uploaded" *ngIf="false">
+              <div class="uploaded-document">
+                <div class="doc">
+                  <mat-icon>picture_as_pdf</mat-icon>
+                  <p>report 01 .pdf</p>
+                </div>
+                <button type="submit" mat-raised-button color="primary">
+                  <ng-container *ngIf="!spinner">download</ng-container>
+                  <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+                </button>
+              </div>
+              <div class="uploaded-document">
+                <div class="doc">
+                  <mat-icon>picture_as_pdf</mat-icon>
+                  <p>report 01 .pdf</p>
+                </div>
+                <button type="submit" mat-raised-button color="primary">
+                  <ng-container *ngIf="!spinner">download</ng-container>
+                  <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+                </button>
+              </div>
+              <div class="uploaded-document">
+                <div class="doc">
+                  <mat-icon>picture_as_pdf</mat-icon>
+                  <p>report 01 .pdf</p>
+                </div>
+                <button type="submit" mat-raised-button color="primary">
+                  <ng-container *ngIf="!spinner">download</ng-container>
+                  <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+                </button>
+              </div>
+  
+              <div class="upload-button">
+                <button type="submit" mat-raised-button color="primary">
+                  <ng-container *ngIf="!spinner">Upload</ng-container>
+                  <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  </body>
+  
+  

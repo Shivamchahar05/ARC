@@ -1,0 +1,66 @@
+<section>
+    <div class="header">
+        <p>Client Management</p>
+        <div class="icons">
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="img">
+                <i class="fa-solid fa-user" (click)="profile()"></i>
+            </div>
+            <h3>User</h3>
+        </div>
+    </div>
+    <hr>
+    <!--  -->
+    <div class="btn1">
+        <button (click)="clientdetails()"><i class="fa-solid fa-file-export"></i></button>
+    </div>
+
+    <!--  -->
+    <form [formGroup]="clientForm">
+        <div class="main">
+            <div class="search_select">
+                <div class="search">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Search through Name, Client ID</mat-label>
+                        <input matInput placeholder="" value="" formControlName="Search" >
+                        <mat-error *ngIf=" formControls?.Search?.errors?.required"> *Search field required
+                        </mat-error>
+                        <mat-error *ngIf=" formControls?.Search?.errors?.pattern"> *space are not valid
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Select Type</mat-label>
+                        <select matNativeControl required formControlName="pageSize" placeholder="10" >
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                        </select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <p>Client type</p>
+            <mat-form-field appearance="outline">
+                <!-- <mat-label>Select Type</mat-label> -->
+                <select matNativeControl required>
+                    <option value="All">ALL</option>
+                    <option value="Blocked">Blocked</option>
+                    <option value="Active">Active</option>
+                    <option value="Archived">Archived</option>
+                </select>
+            </mat-form-field>
+            <div class="btn">
+                <button class="apply" (click)="append()">APPLY</button>
+                <button class="reset" (click)="reset()">RESET</button>
+            </div>
+
+        </div>
+    </form>
+    <section class="table">
+        <app-table [columns]="heading" [dataSource]="datasource" (userDetail)="getUserData($event)" [pageSize]="pageSize" ></app-table>
+    </section>
+</section>

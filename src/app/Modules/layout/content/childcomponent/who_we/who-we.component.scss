@@ -1,0 +1,27 @@
+section{
+    padding: 4% 4% 0% 5%;
+    .subHeader{
+      display: flex;
+      justify-content: space-between;
+      background-color: #6495ED;
+      padding: 20px;
+      .title{
+        color: #ffff;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .penIcon{
+        color: #ffff;
+      }
+    }
+    .content{
+  
+      background-color: #fafbff;
+      border: 1px solid gainsboro;
+      .text{
+        color: #6495ED;
+  
+      }
+    }
+  }
+  

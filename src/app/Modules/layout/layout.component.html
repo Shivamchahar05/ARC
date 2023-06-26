@@ -1,0 +1,59 @@
+<section>
+  <div class="toggle">
+    <mat-toolbar class="mat-elevation-z8">
+      <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+        <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+      </button>
+    </mat-toolbar>
+  </div>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <div class="profile">
+          <img src="../../../assets/profile.png" />
+          <h4 class="name">RocketARC</h4>
+        </div>
+        <a mat-list-item routerLinkActive="router-link-active" routerLink="/layout/dashboard">
+          <mat-icon>home</mat-icon>
+          <span>Dashboard</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" routerLink="/layout/client">
+          <mat-icon>home</mat-icon>
+          <span>Client Management</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" routerLink="/layout/user">
+          <mat-icon>person</mat-icon>
+          <span>User Management</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" [routerLink]="'/layout/transaction'">
+          <mat-icon>receipt_long</mat-icon>
+          <span>Transaction Management</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" [routerLink]="'/layout/Earning'">
+          <mat-icon>paid</mat-icon>
+          <span>Earning Management</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" [routerLink]="'/layout/notification'">
+          <mat-icon>notifications</mat-icon>
+          <span>Notification Management</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" [routerLink]="'/layout/content'">
+          <mat-icon>content_paste</mat-icon>
+          <span>Content Management</span>
+        </a>
+        <a mat-list-item routerLinkActive="router-link-active" [routerLink]="'/layout/staff'">
+          <mat-icon>content_paste</mat-icon>
+          <span>Staff Management</span>
+        </a>
+        <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 92vh;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</section>

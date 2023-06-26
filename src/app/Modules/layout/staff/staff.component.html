@@ -1,0 +1,62 @@
+<section>
+    <div class="header">
+        <p>Staff Management</p>
+        <div class="icons">
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="img">
+                <i class="fa-solid fa-user" (click)="profile()"></i>
+            </div>
+            <h3>User</h3>
+        </div>
+    </div>
+    <hr>
+    <!--  -->
+    <div class="btn">
+        <button (click)="addstaff()">
+            Add New Staff Member
+        </button>
+    </div>
+    <!--  -->
+    <form [formGroup]="staffForm">
+        <div class="main">
+            <div class="search">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Search through Staff Id, Name</mat-label>
+                    <input matInput placeholder="" (keyup)="applyFilter($event)">
+                </mat-form-field>
+            </div>
+            <div class="select">
+                <div>
+                    <label>Status</label><br>
+                    <mat-form-field appearance="outline">
+                        <!-- <mat-label>Status</mat-label> -->
+                        <select matNativeControl required>
+                            <option value="">Select</option>
+                            <option value="">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </mat-form-field>
+                </div>
+                <div class="show">
+                    <mat-form-field appearance="outline">
+                        <!-- <mat-label>Status</mat-label> -->
+                        <select matNativeControl required>
+                            <option value="">Show 10</option>
+                            <option value="">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!--  -->
+    <section class="table">
+        <app-table [columns]="heading" [dataSource]="datasource" (userDetail)="getUserData($event)"></app-table>
+    </section>
+</section>
+<!-- <router-outlet></router-outlet> -->

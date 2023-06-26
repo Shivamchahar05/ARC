@@ -1,0 +1,47 @@
+<section>
+  <div>
+    <header>
+      <h1>Sign In to Admin Panel</h1>
+      <h3>Enter the details below</h3>
+    </header>
+    <form [formGroup]="signForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>Email Adress</mat-label>
+        <input matInput placeholder="user@gmail.com" formControlName="email" required />
+        <mat-error *ngFor="let validation of validationMessage?.email">
+          <mat-error class="error-message"
+            *ngIf="signForm?.get('email')?.hasError(validation?.type) && (signForm?.get('email')?.dirty || signForm?.get('email')?.touched)">
+            {{validation.message}}</mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input [type]="showPassword ? 'text' : 'password'" matInput placeholder="***********" formControlName="password"
+          required />
+        <mat-error *ngFor="let validation of validationMessage?.password">
+          <mat-error class="error-message"
+            *ngIf="signForm?.get('password')?.hasError(validation?.type) && (signForm?.get('password')?.dirty || signForm?.get('password')?.touched)">
+            {{validation.message}}</mat-error>
+        </mat-error>
+        <mat-icon (click)="toggleShow()" matSuffix *ngIf="!showPassword" class="loc">visibility</mat-icon>
+        <mat-icon (click)="toggleShow()" matSuffix *ngIf="showPassword" class="loc">visibility_off</mat-icon>
+        <a (click)="toggleShow()">
+        </a>
+      </mat-form-field>
+    <footer>
+      <a class="forgot" routerLink="forgot-password">Forgot Password?</a>
+      <mat-checkbox>Remember me</mat-checkbox>
+      <div class="invalid" *ngIf="signForm.dirty && signForm.invalid">
+        <mat-icon>warning</mat-icon>
+        <h4>Please enter the required field</h4>
+      </div>
+      <div class="btn">
+        <button type="submit" mat-raised-button color="primary">
+          <ng-container *ngIf="!spinner">Login</ng-container>
+          <mat-spinner [diameter]="40" *ngIf="spinner"></mat-spinner>
+        </button>
+      </div>
+    </footer>
+  </form>
+  </div>
+</section>

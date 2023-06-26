@@ -1,0 +1,42 @@
+<section>
+    <div class="header">
+      <h1 class="heading">Notification Management</h1>
+      <div class="profileIcon">
+        <span class="material-icons">notifications</span>
+        <div class="user">
+          <span class="material-icons" (click)="profile()">account_circle</span>
+          <p id="name">user</p>
+        </div>
+      </div>
+    </div>
+    <div class="detail">
+      <h3 class="title">Details</h3>
+      <div class="userType">
+        <h1 class="rowHeading">User Type</h1>
+        <mat-radio-group [(ngModel)]="isVisible" >
+          <mat-radio-button [value]="1">All Users</mat-radio-button>
+          <mat-radio-button [value]="2" [checked]="isSelected">Specific Users</mat-radio-button>
+        </mat-radio-group>
+        <div class="inputField" *ngIf="isVisible==2">
+          <label>Search User</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="inputField">
+          <mat-form-field appearance="outline">
+            <input placeholder="*Title" matInput>
+          </mat-form-field>
+        </div>
+        <div class="inputField">
+          <mat-form-field appearance="outline">
+            <textarea placeholder="*Description" matInput rows="5"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="btn">
+        <button mat-raised-button id="sendBtn">Send</button>
+      </div>
+    </div>
+  </section>
+  

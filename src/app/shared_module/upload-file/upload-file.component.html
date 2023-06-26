@@ -1,0 +1,15 @@
+<!-- <p>upload-file works!</p> -->
+<div>
+    <div class="report">
+        <div class="pdf" *ngFor='let url of img;let idx=index'>
+            <i class="fa-solid fa-xmark" (click)=" removephoto(idx)"></i>
+            <img [src]="url" height="100" width="100px"
+            > <br />
+        </div>
+        <div class="btn" (click)="imagesfile.click()">
+            <input id="file" type="file" class="form-control" multiple="" #imagesfile
+            (change)="onFileChange($event)" style="display: none;">
+            <button>Upload</button>
+        </div>
+    </div>
+</div>

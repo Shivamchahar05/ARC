@@ -1,0 +1,325 @@
+$color: #5282f0;
+$backGroundColor: #eef3fe;
+
+@mixin borderBottom {
+    border-bottom: 1px solid #5282f0;
+}
+
+body {
+    // margin-left: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    h1 {
+        color: #5282f0;
+    }
+    .header {
+        display: grid;
+        grid-template-columns: 90% 10%;
+        margin-top: 20px;
+        margin-left: 20px;
+        .Stuff {
+            font-size: 20px;
+            color: #759bf3;
+            font-weight: 600;
+            p {
+                font-size: 15px;
+                color: #759bf3;
+                margin-top: 10px;
+                font-weight: 400;
+            }
+        }
+        .icons {
+            display: flex;
+            //   justify-content: center;
+            color: #5282f0;
+            .notification {
+                i {
+                    font-size: 30px;
+                }
+            }
+            .img {
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                border: 1px solid #759bf3;
+                margin-left: 20px;
+                i {
+                    font-size: 15px;
+                    padding-top: 5px;
+                    padding-left: 9px;
+                }
+            }
+            h3 {
+                margin-left: 20px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    section {
+        
+        background-color: white;
+        @include borderBottom();
+        // margin: 1% 28px;
+
+        a {
+            cursor: pointer;
+        }
+
+        .profile {
+            display: flex;
+            text-align: center;
+            img{
+                margin-top: 20px;
+                height: 100px;
+                width: 100px;
+            }
+
+            a {
+                margin-top: 4%;
+                color: #5282f0;
+            }
+        }
+
+        form {
+            border: 1px solid #5282f0;
+            margin-top: 2%;
+
+            .form-sections {
+                padding: 2%;
+                display: grid;
+                grid-template-columns: auto auto;
+
+                label {
+                    color: $color;
+                }
+
+                ::ng-deep {
+                    .mat-form-field {
+                        width: 90%;
+                    }
+                    .mat-progress-spinner circle,
+                    .mat-spinner circle {
+                        stroke: white;
+                    }
+                }
+
+                .right,
+                .left {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .left {
+                    position: relative;
+                }
+
+                .left:after {
+                    content: "";
+                    position: absolute;
+                    right: 5%;
+                    border-right: 1px solid #cfc7c0;
+                    top: 0;
+                    bottom: 0;
+                }
+            }
+            @media screen and (max-width: 480px) {
+                .form-sections{
+                  display: grid;
+                  grid-template-columns: auto;
+                }
+            }
+
+            .save-button {
+                text-align: center;
+                margin-bottom: 2%;
+
+                button {
+                    width: 10%;
+                    padding: 10px;
+                    font-size: 24px;
+                    color: #ffff;
+                    background-color: $color;
+                    border: 1px solid #464bb4;
+                    cursor: pointer;
+                }
+            }
+            @media screen and (max-width: 480px) {
+                .save-button{
+                button{
+                    font-size: 15px;
+                    width: 20%;
+                    
+                }
+            }
+            }
+        }
+    }
+
+    section {
+        button {
+            padding: 5px;
+            margin-left: 10px;
+            font-size: 20px;
+            color: #ffff;
+            background-color: $color;
+            border: 1px solid #464bb4;
+            cursor: pointer;
+        }
+
+        .interview,
+        .credit-counselling,
+        .credit-file,
+        .credit-report,
+        .interview-2,
+        .download-resources {
+            display: flex;
+            justify-content: space-between;
+            margin: 2% auto;
+
+            label {
+                font-size: 30px;
+                font-weight: 500;
+                color: $color;
+            }
+
+            .ssn-number {
+                display: flex;
+                flex-direction: column;
+
+                .input-box {
+                    margin-top: 2%;
+                }
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .interview{
+           display: flex;
+           flex-direction: column;
+           margin-bottom: 100px;
+        }
+        }
+
+        .interview {
+            height: 65px;
+        }
+
+        .radio-button {
+            display: flex;
+            flex-direction: column;
+
+            ::ng-deep {
+                mat-radio-group {
+                    padding: 10px;
+                    width: 200px;
+                    display: flex;
+                    justify-content: space-between;
+                    color: $color;
+                }
+            }
+        }
+
+        .doc-upload {
+            margin: 10px 0 10px 10px;
+            width: fit-content;
+
+            .uploaded {
+                display: flex;
+                padding: 2% 2%;
+                background-color: $backGroundColor;
+                width: 100%;
+                text-align: center;
+
+                .uploaded-document {
+                    .doc {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        border-bottom: 2px solid red;
+                        background-color: #fff;
+                        width: 200px;
+                        margin: 5px;
+
+                        mat-icon {
+                            display: flex;
+                            justify-content: center;
+                            font-size: 50px;
+                            padding: 17%;
+                            margin-bottom: 10px;
+                            color: $color;
+                        }
+                    }
+
+                    button {
+                        margin-top: 1px;
+                        width: 70%;
+                        background-color: transparent;
+                        color: $color;
+                        border: none;
+                        font-weight: 400;
+                    }
+                }
+
+                .upload-button {
+                    display: flex;
+                    align-items: center;
+
+                    button {
+                        width: 100px;
+                        margin-left: 41px;
+                    }
+                }
+            }
+        }
+
+        .payment {
+            display: grid;
+            flex-direction: column;
+
+            label {
+                font-size: 30px;
+                font-weight: 500;
+                color: $color;
+            }
+
+            ::ng-deep {
+                mat-radio-group {
+                    padding: 25px 10px 25px 10px;
+                    width: 200px;
+                    display: flex;
+                    justify-content: space-between;
+                    color: $color;
+                }
+            }
+
+            .payment-inputs {
+                display: flex;
+                margin-left: 10px;
+                width: 900px;
+
+                p {
+                    font-size: 25px;
+                    font-weight: 400;
+                    color: $color;
+                    padding: 2% auto;
+                }
+
+                mat-form-field {
+                    width: 400px;
+                }
+
+                .pending-amount {
+                    padding: 2% auto;
+                    margin-left: 20%;
+                }
+            }
+        }
+
+        .interview-2 {
+            .bci-file {
+                padding: 10px 0;
+            }
+        }
+    }
+}
